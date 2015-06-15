@@ -42,7 +42,7 @@ To make a simple histogram of the 30-day death rates from heart attack (column 1
 run
 
 > outcome[, 11] <- as.numeric(outcome[, 11])
-> ## You may get a warning about NAs being introduced; that is okay
+>  You may get a warning about NAs being introduced; that is okay
 > hist(outcome[, 11])
 
 Because we originally read the data in as character (by specifying colClasses = "character" we need to
