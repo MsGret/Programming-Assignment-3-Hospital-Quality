@@ -28,7 +28,7 @@ Tables 19 and 11) to have next to you while you work on this assignment. In part
 the variables for each table indicate column indices in each table (i.e. “Hospital Name” is column 2 in the
 outcome-of-care-measures.csv file).
 
-1. Plot the 30-day mortality rates for heart attack
+#1. Plot the 30-day mortality rates for heart attack
    Read the outcome data into R via the read.csv function and look at the first few rows.
 
 > outcome <- read.csv("outcome-of-care-measures.csv", colClasses = "character")
@@ -50,7 +50,7 @@ coerce the column to be numeric. You may get a warning about NAs being introduce
 
 There is nothing to submit for this part.
 
-2. Finding the best hospital in a state
+#2. Finding the best hospital in a state
    Write a function called best that take two arguments: the 2-character abbreviated name of a state and an
    outcome name. The function reads the outcome-of-care-measures.csv file and returns a character vector
    with the name of the hospital that has the best (i.e. lowest) 30-day mortality for the specified outcome
@@ -112,7 +112,7 @@ Save your code for this function to a file named best.R.
 Use the submit script provided to submit your solution to this part. There are 3 tests that need to be passed
 for this part of the assignment.
 
-3. Ranking hospitals by outcome in a state
+#3. Ranking hospitals by outcome in a state
    Write a function called rankhospital that takes three arguments: the 2-character abbreviated name of a
    state (state), an outcome (outcome), and the ranking of a hospital in that state for that outcome (num).
    The function reads the outcome-of-care-measures.csv file and returns a character vector with the name
@@ -186,7 +186,7 @@ Save your code for this function to a file named rankhospital.R.
 Use the submit script provided to submit your solution to this part. There are 4 tests that need to be passed
 for this part of the assignment.
 
-4. Ranking hospitals in all states
+#4. Ranking hospitals in all states
 
    Write a function called rankall that takes two arguments: an outcome name (outcome) and a hospital ranking
    (num). The function reads the outcome-of-care-measures.csv file and returns a 2-column data frame
