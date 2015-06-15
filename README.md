@@ -12,10 +12,10 @@ whether hospitals should be fined for not providing high quality care to patient
 for some background on this particular topic).
 The Hospital Compare web site contains a lot of data and we will only look at a small subset for this
 assignment. The zip file for this assignment contains three files
-• outcome-of-care-measures.csv: Contains information about 30-day mortality and readmission rates
+- outcome-of-care-measures.csv: Contains information about 30-day mortality and readmission rates
 for heart attacks, heart failure, and pneumonia for over 4,000 hospitals.
-• hospital-data.csv: Contains information about each hospital.
-• Hospital_Revised_Flatfiles.pdf: Descriptions of the variables in each file (i.e the code book).
+- hospital-data.csv: Contains information about each hospital.
+- Hospital_Revised_Flatfiles.pdf: Descriptions of the variables in each file (i.e the code book).
 A description of the variables in each of the files is in the included PDF file named Hospital_Revised_Flatfiles.pdf.
 This document contains information about many other files that are not included with this programming
 assignment. You will want to focus on the variables for Number 19 (“Outcome of Care Measures.csv”) and
@@ -23,7 +23,7 @@ Number 11 (“Hospital Data.csv”). You may find it useful to print out this do
 Tables 19 and 11) to have next to you while you work on this assignment. In particular, the numbers of
 the variables for each table indicate column indices in each table (i.e. “Hospital Name” is column 2 in the
 outcome-of-care-measures.csv file).
-#1 Plot the 30-day mortality rates for heart attack
+#1. Plot the 30-day mortality rates for heart attack
 Read the outcome data into R via the read.csv function and look at the first few rows.
 > outcome <- read.csv("outcome-of-care-measures.csv", colClasses = "character")
 > head(outcome)
@@ -33,7 +33,7 @@ names(outcome) (the names are also in the PDF document.
 To make a simple histogram of the 30-day death rates from heart attack (column 11 in the outcome dataset),
 run
 > outcome[, 11] <- as.numeric(outcome[, 11])
-> ## You may get a warning about NAs being introduced; that is okay
+>  You may get a warning about NAs being introduced; that is okay
 > hist(outcome[, 11])
 1
 Because we originally read the data in as character (by specifying colClasses = "character" we need to
@@ -51,10 +51,10 @@ be sorted in alphabetical order and the first hospital in that set should be cho
 and “f” are tied for best, then hospital “b” should be returned).
 The function should use the following template.
 best <- function(state, outcome) {
-## Read outcome data
-## Check that state and outcome are valid
-## Return hospital name in that state with lowest 30-day death
-## rate
+ Read outcome data
+ Check that state and outcome are valid
+ Return hospital name in that state with lowest 30-day death
+ rate
 }
 The function should check the validity of its arguments. If an invalid state value is passed to best, the
 function should throw an error via the stop function with the exact message “invalid state”. If an invalid
@@ -107,10 +107,10 @@ scheme and Detar is ranked number 4. One can use the order function to sort mult
 manner (i.e. where one vector is used to break ties in another vector).
 The function should use the following template.
 rankhospital <- function(state, outcome, num = "best") {
-## Read outcome data
-## Check that state and outcome are valid
-## Return hospital name in that state with the given rank
-## 30-day death rate
+ Read outcome data
+ Check that state and outcome are valid
+ Return hospital name in that state with the given rank
+ 30-day death rate
 }
 The function should check the validity of its arguments. If an invalid state value is passed to best, the
 function should throw an error via the stop function with the exact message “invalid state”. If an invalid
@@ -142,11 +142,11 @@ Handling ties. The rankall function should handle ties in the 30-day mortality r
 that the rankhospital function handles ties.
 The function should use the following template.
 rankall <- function(outcome, num = "best") {
-## Read outcome data
-## Check that state and outcome are valid
-## For each state, find the hospital of the given rank
-## Return a data frame with the hospital names and the
-## (abbreviated) state name
+ Read outcome data
+ Check that state and outcome are valid
+ For each state, find the hospital of the given rank
+ Return a data frame with the hospital names and the
+ (abbreviated) state name
 }
 NOTE: For the purpose of this part of the assignment (and for efficiency), your function should NOT call
 the rankhospital function from the previous section.
