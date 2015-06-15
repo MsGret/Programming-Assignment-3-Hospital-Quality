@@ -1,6 +1,6 @@
-# Programming-Assignment-3-Hospital-Quality
-
-# Introduction
+Programming Assignment 3
+R Programming
+Introduction
 Download the file ProgAssignment3-data.zip file containing the data for Programming Assignment 3 from
 the Coursera web site. Unzip the file in a directory that will serve as your working directory. When you
 start up R make sure to change your working directory to the directory where you unzipped the data.
@@ -23,6 +23,7 @@ Number 11 (“Hospital Data.csv”). You may find it useful to print out this do
 Tables 19 and 11) to have next to you while you work on this assignment. In particular, the numbers of
 the variables for each table indicate column indices in each table (i.e. “Hospital Name” is column 2 in the
 outcome-of-care-measures.csv file).
+'''
 #1. Plot the 30-day mortality rates for heart attack
 Read the outcome data into R via the read.csv function and look at the first few rows.
 > outcome <- read.csv("outcome-of-care-measures.csv", colClasses = "character")
@@ -33,12 +34,12 @@ names(outcome) (the names are also in the PDF document.
 To make a simple histogram of the 30-day death rates from heart attack (column 11 in the outcome dataset),
 run
 > outcome[, 11] <- as.numeric(outcome[, 11])
->  You may get a warning about NAs being introduced; that is okay
+> ## You may get a warning about NAs being introduced; that is okay
 > hist(outcome[, 11])
-1
 Because we originally read the data in as character (by specifying colClasses = "character" we need to
 coerce the column to be numeric. You may get a warning about NAs being introduced but that is okay.
 There is nothing to submit for this part.
+'''
 #2. Finding the best hospital in a state
 Write a function called best that take two arguments: the 2-character abbreviated name of a state and an
 outcome name. The function reads the outcome-of-care-measures.csv file and returns a character vector
@@ -51,10 +52,10 @@ be sorted in alphabetical order and the first hospital in that set should be cho
 and “f” are tied for best, then hospital “b” should be returned).
 The function should use the following template.
 best <- function(state, outcome) {
- Read outcome data
- Check that state and outcome are valid
- Return hospital name in that state with lowest 30-day death
- rate
+## Read outcome data
+## Check that state and outcome are valid
+## Return hospital name in that state with lowest 30-day death
+## rate
 }
 The function should check the validity of its arguments. If an invalid state value is passed to best, the
 function should throw an error via the stop function with the exact message “invalid state”. If an invalid
@@ -74,11 +75,10 @@ Here is some sample output from the function.
 Error in best("BB", "heart attack") : invalid state
 > best("NY", "hert attack")
 Error in best("NY", "hert attack") : invalid outcome
->
-2
 Save your code for this function to a file named best.R.
 Use the submit script provided to submit your solution to this part. There are 3 tests that need to be passed
 for this part of the assignment.
+'''
 #3. Ranking hospitals by outcome in a state
 Write a function called rankhospital that takes three arguments: the 2-character abbreviated name of a
 state (state), an outcome (outcome), and the ranking of a hospital in that state for that outcome (num).
@@ -107,10 +107,10 @@ scheme and Detar is ranked number 4. One can use the order function to sort mult
 manner (i.e. where one vector is used to break ties in another vector).
 The function should use the following template.
 rankhospital <- function(state, outcome, num = "best") {
- Read outcome data
- Check that state and outcome are valid
- Return hospital name in that state with the given rank
- 30-day death rate
+## Read outcome data
+## Check that state and outcome are valid
+## Return hospital name in that state with the given rank
+## 30-day death rate
 }
 The function should check the validity of its arguments. If an invalid state value is passed to best, the
 function should throw an error via the stop function with the exact message “invalid state”. If an invalid
@@ -128,6 +128,7 @@ Here is some sample output from the function.
 Save your code for this function to a file named rankhospital.R.
 Use the submit script provided to submit your solution to this part. There are 4 tests that need to be passed
 for this part of the assignment.
+'''
 #4. Ranking hospitals in all states
 Write a function called rankall that takes two arguments: an outcome name (outcome) and a hospital ranking
 (num). The function reads the outcome-of-care-measures.csv file and returns a 2-column data frame
@@ -142,11 +143,11 @@ Handling ties. The rankall function should handle ties in the 30-day mortality r
 that the rankhospital function handles ties.
 The function should use the following template.
 rankall <- function(outcome, num = "best") {
- Read outcome data
- Check that state and outcome are valid
- For each state, find the hospital of the given rank
- Return a data frame with the hospital names and the
- (abbreviated) state name
+## Read outcome data
+## Check that state and outcome are valid
+## For each state, find the hospital of the given rank
+## Return a data frame with the hospital names and the
+## (abbreviated) state name
 }
 NOTE: For the purpose of this part of the assignment (and for efficiency), your function should NOT call
 the rankhospital function from the previous section.
@@ -156,7 +157,6 @@ variable can take values “best”, “worst”, or an integer indicating the r
 If the number given by num is larger than the number of hospitals in that state, then the function should
 return NA.
 Here is some sample output from the function.
-4
 > source("rankall.R")
 > head(rankall("heart attack", 20), 10)
 hospital state
@@ -190,3 +190,4 @@ WY CHEYENNE VA MEDICAL CENTER WY
 Save your code for this function to a file named rankall.R.
 Use the submit script provided to submit your solution to this part. There are 3 tests that need to be passed
 for this part of the assignment.
+'''
