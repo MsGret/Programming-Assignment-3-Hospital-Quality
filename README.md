@@ -39,7 +39,7 @@ run
 Because we originally read the data in as character (by specifying colClasses = "character" we need to
 coerce the column to be numeric. You may get a warning about NAs being introduced but that is okay.
 There is nothing to submit for this part.
-#2 Finding the best hospital in a state
+#2. Finding the best hospital in a state
 Write a function called best that take two arguments: the 2-character abbreviated name of a state and an
 outcome name. The function reads the outcome-of-care-measures.csv file and returns a character vector
 with the name of the hospital that has the best (i.e. lowest) 30-day mortality for the specified outcome
@@ -79,7 +79,7 @@ Error in best("NY", "hert attack") : invalid outcome
 Save your code for this function to a file named best.R.
 Use the submit script provided to submit your solution to this part. There are 3 tests that need to be passed
 for this part of the assignment.
-#3 Ranking hospitals by outcome in a state
+#3. Ranking hospitals by outcome in a state
 Write a function called rankhospital that takes three arguments: the 2-character abbreviated name of a
 state (state), an outcome (outcome), and the ranking of a hospital in that state for that outcome (num).
 The function reads the outcome-of-care-measures.csv file and returns a character vector with the name
@@ -128,7 +128,7 @@ Here is some sample output from the function.
 Save your code for this function to a file named rankhospital.R.
 Use the submit script provided to submit your solution to this part. There are 4 tests that need to be passed
 for this part of the assignment.
-#4 Ranking hospitals in all states
+#4. Ranking hospitals in all states
 Write a function called rankall that takes two arguments: an outcome name (outcome) and a hospital ranking
 (num). The function reads the outcome-of-care-measures.csv file and returns a 2-column data frame
 containing the hospital in each state that has the ranking specified in num. For example the function call
